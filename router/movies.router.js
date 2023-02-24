@@ -6,7 +6,7 @@ import {
   createmovies,
   deletemovies,
   updatemovies,
-} from "./getmovies.js";
+} from "./movies.service.js";
 
 //welcome api
 router.get("/", function (request, response) {
