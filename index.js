@@ -19,6 +19,6 @@ app.use(express.json())
 
 
 
-app.use("/movies",moviesRouter)
+app.use("/",moviesRouter)
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
 
