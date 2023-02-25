@@ -14,7 +14,7 @@ router.get("/", function (request, response) {
 });
 
 //movies api
-router.get("/", async function (request, response) {
+router.get("/allmovies", async function (request, response) {
   const movies = await getmovies();
 
   response.send(movies);
