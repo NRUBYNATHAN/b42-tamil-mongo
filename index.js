@@ -3,7 +3,8 @@ dotenv.config()
 // const express = require("express"); // "type": "commonjs"
 import express from "express"; // "type": "module"
 import { MongoClient } from "mongodb";
-import moviesRouter from "./router/movies.router.js"
+import moviesRouter from "./router/movies.router.js";
+import cors from "cors";
 const app = express();
 console.log(process.env. MONGO_URL)
 const PORT = process.env.PORT;
@@ -14,6 +15,8 @@ export const client = new MongoClient(MONGO_URL); // dial
 // Top level await
 await client.connect(); // call
 console.log("Mongo is connected !!!  ");
+//ellarukum data kutuka
+app.use(cors());
 //ithu ethukuna post and update function ku set akum 
 app.use(express.json())
 
