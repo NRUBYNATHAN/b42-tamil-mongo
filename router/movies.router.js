@@ -6,15 +6,15 @@ import {
   createmovies,
   deletemovies,
   updatemovies,
-} from "./movies.service.js";
+} from "../service/movies.service.js";
 
-//welcome api
-router.get("/", function (request, response) {
-  response.send("🙋‍♂️, 🌏 🎊✨🤩,❌❌❌❌❌");
-});
+// //welcome api
+// router.get("/", function (request, response) {
+//   response.send("🙋‍♂️, 🌏 🎊✨🤩,❌❌❌❌❌");
+// });
 
 //movies api
-router.get("/movies", async function (request, response) {
+router.get("/", async function (request, response) {
   const movies = await getmovies();
 
   response.send(movies);

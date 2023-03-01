@@ -4,7 +4,9 @@ dotenv.config()
 import express from "express"; // "type": "module"
 import { MongoClient } from "mongodb";
 import moviesRouter from "./router/movies.router.js";
+import usersRouter from "./router/users.router.js";
 import cors from "cors";
+
 const app = express();
 console.log(process.env. MONGO_URL)
 const PORT = process.env.PORT;
@@ -22,5 +24,7 @@ app.use(express.json())
 
 
 
-app.use("/",moviesRouter)
+app.use("/movies",moviesRouter)
+app.use("/users",usersRouter)
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
+
