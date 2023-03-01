@@ -1,4 +1,6 @@
 import express from "express";
+import { auth } from "../middleware/auth.js";
+
 const router = express.Router();
 import {
   getmovies,
@@ -8,15 +10,20 @@ import {
   updatemovies,
 } from "../service/movies.service.js";
 
-// //welcome api
+//welcome api
 // router.get("/", function (request, response) {
 //   response.send("🙋‍♂️, 🌏 🎊✨🤩,❌❌❌❌❌");
 // });
 
 //movies api
 router.get("/", async function (request, response) {
-  const movies = await getmovies();
-
+  
+  console.log(request.query)
+  if(request.query.rating) {
+    request.query.rating = +request.query.rating;
+  }
+console.log(request.query)
+const movies = await getmovies(request.query);
   response.send(movies);
 });
 
