@@ -26,5 +26,30 @@ app.use(express.json())
 
 app.use("/movies",moviesRouter)
 app.use("/users",usersRouter)
+//  const mobile=[
+//     {
+//       "model": "OnePlus 9 5G",
+//       "img": "https://m.media-amazon.com/images/I/61fy+u9uqPL._SX679_.jpg",
+//       "company": "Oneplus"
+//     },
+//     {
+//       "model": "Iphone 13 mini",
+//       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2TaydkHFZp6JYGw9PVZBr-gD5KmtCu_xgyw&usqp=CAU",
+//       "company": "Apple"
+//     },
+//     {
+//       "model": "Samsung s21 ultra",
+//       "img": "https://m.media-amazon.com/images/I/81kfA-GtWwL._SY606_.jpg",
+//       "company": "Samsung"
+//     },
+//     {
+//       "model": "Xiomi mi 11",
+//       "img": "https://m.media-amazon.com/images/I/51K4vNxMAhS._AC_SX522_.jpg",
+//       "company": "Xiomi"
+//     }
+//   ]
+//   app.get("/mobile",function(request,response){
+// response.send(mobile)
+// })
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
 
